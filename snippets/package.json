@@ -1,0 +1,11 @@
+{
+  "name": "ld-snippets",
+  "contribute": {
+    "snippets": [
+      {
+        "language": ["svelte"],
+        "path": "./svelte-snips.json"
+      }
+    ]
+  }
+}
