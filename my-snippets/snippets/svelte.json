@@ -1,9 +1,18 @@
 {
-  "ts-test": {
-    "prefix": "hellosvelte",
+  "svelte-base-component": {
+    "prefix": "s-base",
     "body": [
-      "hello from svetle snippet"
+      "<script lang=\"ts\">",
+      "\t${2:// your script goes here}",
+      "</script>",
+      "",
+      "${1:<!-- markup (zero or more items) goes here -->}",
+      "",
+      "<style lang=\"scss\">",
+      "\t${3:// your styles goes here}",
+      "</style>"
     ],
-    "description": "test svelte snippet"
+    "description": "svelte base component template"
   }
 }
+

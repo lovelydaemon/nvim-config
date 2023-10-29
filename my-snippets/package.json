@@ -3,15 +3,11 @@
   "contributes": {
     "snippets": [
       {
-        "language": ["all"],
-        "path": "./snippets/all.json"
-      },
-      {
         "language": ["svelte"],
         "path": "./snippets/svelte.json"
       },
       {
-        "language": ["typescript"],
+        "language": ["typescript", "svelte"],
         "path": "./snippets/typescript.json"
       }
     ]

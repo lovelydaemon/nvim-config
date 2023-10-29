@@ -1,9 +1,11 @@
 {
-  "ts-test": {
-    "prefix": "hellots",
+  "function": {
+    "prefix": "function",
     "body": [
-      "hello from ts snippet"
+      "function ${1}(${2}) {",
+      "\t${3://code}",
+      "}"
     ],
-    "description": "test ts snippet"
+    "description": "just a function"
   }
 }
