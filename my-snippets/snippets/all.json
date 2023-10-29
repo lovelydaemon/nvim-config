@@ -1,0 +1,9 @@
+{
+  "ts-test": {
+    "prefix": "helloall",
+    "body": [
+      "hello from all snippet"
+    ],
+    "description": "test all snippet"
+  }
+}

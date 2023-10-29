@@ -21,7 +21,7 @@ return require 'packer'.startup(function(use)
   -- LSP
   use {
     'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
+    branch = 'v3.x',
     requires = {
       -- LSP Support
       { 'williamboman/mason.nvim' },
@@ -31,7 +31,7 @@ return require 'packer'.startup(function(use)
       -- CMP
       { 'hrsh7th/nvim-cmp' },
       { 'hrsh7th/cmp-nvim-lsp' },
-      { 'L3MON4D3/LuaSnip' },
+      { 'L3MON4D3/LuaSnip',                 tag = "v2.*", run = 'make install_jsregexp' },
     }
   }
 

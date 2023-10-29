@@ -1,0 +1,9 @@
+{
+  "ts-test": {
+    "prefix": "hellosvelte",
+    "body": [
+      "hello from svetle snippet"
+    ],
+    "description": "test svelte snippet"
+  }
+}

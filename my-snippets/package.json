@@ -1,0 +1,19 @@
+{
+  "name": "lovelydaemon-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": ["all"],
+        "path": "./snippets/all.json"
+      },
+      {
+        "language": ["svelte"],
+        "path": "./snippets/svelte.json"
+      },
+      {
+        "language": ["typescript"],
+        "path": "./snippets/typescript.json"
+      }
+    ]
+  }
+}

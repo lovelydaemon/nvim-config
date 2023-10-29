@@ -1,13 +1,23 @@
-local lsp = require 'lsp-zero'
-local cmp = require 'cmp'
+local lsp_zero = require 'lsp-zero'
+local lspconfig = require 'lspconfig'
 local luasnip = require 'luasnip'
+local mason = require 'mason'
+local mason_lspconfig = require 'mason-lspconfig'
+local cmp = require 'cmp'
 
-
-lsp.preset('recommended')
-
-lsp.ensure_installed({
-  'tsserver',
-  'lua_ls',
+mason.setup()
+mason_lspconfig.setup({
+  ensure_installed = {
+    'tsserver',
+    'lua_ls',
+  },
+  handlers = {
+    lsp_zero.default_setup,
+    lua_ls = function()
+      local lua_opts = lsp_zero.nvim_lua_ls()
+      lspconfig.lua_ls.setup(lua_opts)
+    end,
+  }
 })
 
 local cmp_maps = {
@@ -58,23 +68,18 @@ local cmp_maps = {
   ['<C-y>'] = function() end,
 }
 
-cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
-  mapping = cmp_maps
-}
-
-
-lsp.setup_nvim_cmp({
-  mapping = cmp_maps,
+cmp.setup({
   formatting = {
     format = function(_, vim_item)
       return vim_item
     end
   },
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
+  mapping = cmp_maps,
   sources = cmp.config.sources({
     { name = 'luasnip' },
     { name = 'nvim_lsp' },
@@ -85,41 +90,25 @@ lsp.setup_nvim_cmp({
   })
 })
 
-lsp.set_sign_icons({
+lsp_zero.set_sign_icons({
   error = '',
   warn = '',
   hint = '',
   info = ''
 })
 
-lsp.on_attach(function(client, bufnr)
+lsp_zero.on_attach(function(_, bufnr)
   local opts = { buffer = bufnr, remap = false }
-
-  -- goto definition
   vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition() end, opts)
-
-  -- show info
   vim.keymap.set('n', 'gh', function() vim.lsp.buf.hover() end, opts)
-
-
-  --vim.keymap.set('n', '<leader>vws', function() vim.lsp.buf.workspace_symbol() end, opts)
-  --vim.keymap.set('n', '<leader>vd', function() vim.diagnostic.open_float() end, opts)
-
-  -- goto next warn/error
   vim.keymap.set('n', ']d', function() vim.diagnostic.goto_next() end, opts)
-
-  -- goto prev warn/error
   vim.keymap.set('n', '[d', function() vim.diagnostic.goto_prev() end, opts)
-
-  -- light bulb aka cmd+
   vim.keymap.set('n', '<leader><C-.>', function() vim.lsp.buf.code_action() end, opts)
-
   vim.keymap.set('n', '<leader>vrr', function() vim.lsp.buf.references() end, opts)
   vim.keymap.set('n', '<leader>vrn', function() vim.lsp.buf.rename() end, opts)
-  --vim.keymap.set('i', '<C-i>', function() vim.lsp.buf.signature_help() end, opts)
 end)
 
-lsp.format_on_save({
+lsp_zero.format_on_save({
   servers = {
     ['lua_ls'] = { 'lua' },
     ['svelte'] = { 'svelte' },
@@ -128,5 +117,3 @@ lsp.format_on_save({
     ['tailwindcss'] = { 'css' },
   }
 })
-
-lsp.setup()
