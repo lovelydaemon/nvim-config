@@ -13,6 +13,29 @@
       "</style>"
     ],
     "description": "svelte base component template"
+  },
+  "svelte-on-mount": {
+    "prefix": "s-onmount",
+    "body": [
+      "onMount(${1}() => {",
+      "\t${2:// content here}",
+      "});"
+    ],
+    "description": "onMount lifecycle function"
+  },
+  "svelte-on-destroy": {
+    "prefix": "s-ondestroy",
+    "body": [
+      "onDestroy(${1}() => {",
+      "\t${2:// content here}",
+      "});"
+    ],
+    "description": "onDestroy lifecycle function"
+  },
+  "svelte-dispatch": {
+    "prefix": "s-dispatch",
+    "body": ["const dispatch = createEventDispatcher<{ ${1://name: type} }>();"],
+    "description": "svelte dispatch"
   }
 }
 

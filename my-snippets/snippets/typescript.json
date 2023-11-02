@@ -7,5 +7,33 @@
       "}"
     ],
     "description": "just a function"
+  },
+  "console-log": {
+    "prefix": "log",
+    "body": [
+      "console.log(${1});"
+    ],
+    "description": "shortcut for console.log()"
+  },
+  "adsight-export-interface": {
+    "prefix": "exp-int",
+    "body": [
+      "export interface ${1://name} {",
+      "\t${2}",
+      "}"
+    ],
+    "description": "export interface of object"
+  },
+  "adsight-export-namespace-get": {
+    "prefix": "exp-name-get",
+    "body": [
+      "export namespace ${1://name} {",
+      "\texport interface Response {",
+      "\t\tData: ${2};",
+      "\t\tIsSuccessful: boolean;",
+      "\t}",
+      "}"
+    ],
+    "description": "export namespace for GET request"
   }
 }

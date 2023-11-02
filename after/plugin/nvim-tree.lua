@@ -1,4 +1,5 @@
 require('nvim-tree').setup {
+  hijack_cursor = true,
   view = {
     side = 'right',
     width = 40,
@@ -6,7 +7,7 @@ require('nvim-tree').setup {
     debounce_delay = 100,
   },
   renderer = {
-    indent_width = 1,
+    indent_width = 2,
     highlight_git = false,
     highlight_diagnostics = true,
     highlight_modified = 'none',
