@@ -9,6 +9,10 @@
       {
         "language": ["typescript", "svelte"],
         "path": "./snippets/typescript.json"
+      },
+      {
+        "language": ["eruby"],
+        "path": "./snippets/erb.json"
       }
     ]
   }

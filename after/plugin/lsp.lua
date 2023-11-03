@@ -17,6 +17,12 @@ mason_lspconfig.setup({
       local lua_opts = lsp_zero.nvim_lua_ls()
       lspconfig.lua_ls.setup(lua_opts)
     end,
+    emmet_language_server = function()
+      lspconfig.emmet_language_server.setup({
+        filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "pug",
+          "typescriptreact", "vue" },
+      })
+    end,
   }
 })
 
@@ -123,5 +129,6 @@ lsp_zero.format_on_save({
     ['svelte'] = { 'svelte' },
     ['cssls'] = { 'css', 'scss' },
     ['tsserver'] = { 'javascript', 'typescript' },
+    ['ruby_ls'] = { 'ruby' },
   }
 })
