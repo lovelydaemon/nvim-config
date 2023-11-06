@@ -3,16 +3,29 @@
   "contributes": {
     "snippets": [
       {
-        "language": ["svelte"],
+        "language": [
+          "svelte"
+        ],
         "path": "./snippets/svelte.json"
       },
       {
-        "language": ["typescript", "svelte"],
+        "language": [
+          "typescript",
+          "svelte"
+        ],
         "path": "./snippets/typescript.json"
       },
       {
-        "language": ["eruby"],
+        "language": [
+          "eruby"
+        ],
         "path": "./snippets/erb.json"
+      },
+      {
+        "language": [
+          "ruby"
+        ],
+        "path": "./snippets/ruby.json"
       }
     ]
   }

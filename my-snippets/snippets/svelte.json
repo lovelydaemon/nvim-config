@@ -34,8 +34,9 @@
   },
   "svelte-dispatch": {
     "prefix": "s-dispatch",
-    "body": ["const dispatch = createEventDispatcher<{ ${1://name: type} }>();"],
+    "body": [
+      "const dispatch = createEventDispatcher<{ ${1://name: type} }>();"
+    ],
     "description": "svelte dispatch"
   }
 }
-

@@ -47,14 +47,14 @@ local cmp_maps = {
   ['<Tab>'] = cmp.mapping(function(fallback)
     if cmp.visible() then
       cmp.confirm({ select = true })
-    elseif luasnip.jumpable(1) then
+    elseif luasnip.locally_jumpable(1) then
       luasnip.jump(1)
     else
       fallback()
     end
   end, { "i", "s" }),
   ['<S-Tab>'] = cmp.mapping(function(fallback)
-    if luasnip.jumpable(-1) then
+    if luasnip.locally_jumpable(-1) then
       luasnip.jump(-1)
     else
       fallback()
@@ -130,5 +130,6 @@ lsp_zero.format_on_save({
     ['cssls'] = { 'css', 'scss' },
     ['tsserver'] = { 'javascript', 'typescript' },
     ['ruby_ls'] = { 'ruby' },
+    ['jsonls'] = { 'json' }
   }
 })

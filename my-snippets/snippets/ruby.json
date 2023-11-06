@@ -1,0 +1,11 @@
+{
+  "def": {
+    "prefix": "def",
+    "body": [
+      "def $1",
+      "  $2",
+      "end"
+    ],
+    "description": "def"
+  }
+}
