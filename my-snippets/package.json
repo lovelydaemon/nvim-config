@@ -26,6 +26,14 @@
           "ruby"
         ],
         "path": "./snippets/ruby.json"
+      },
+      {
+        "language": [
+          "typescript",
+          "javascript",
+          "svelte"
+        ],
+        "path": "./snippets/javascript.json"
       }
     ]
   }

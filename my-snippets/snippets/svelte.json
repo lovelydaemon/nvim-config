@@ -3,40 +3,29 @@
     "prefix": "s-base",
     "body": [
       "<script lang=\"ts\">",
-      "\t${2:// your script goes here}",
       "</script>",
       "",
-      "${1:<!-- markup (zero or more items) goes here -->}",
+      "",
       "",
       "<style lang=\"scss\">",
-      "\t${3:// your styles goes here}",
       "</style>"
     ],
     "description": "svelte base component template"
   },
-  "svelte-on-mount": {
-    "prefix": "s-onmount",
+  "svelte-script-tag": {
+    "prefix": "s-script",
     "body": [
-      "onMount(${1}() => {",
-      "\t${2:// content here}",
-      "});"
+      "<script lang=\"ts\">",
+      "</script>"
     ],
-    "description": "onMount lifecycle function"
+    "description": "svelte script tag"
   },
-  "svelte-on-destroy": {
-    "prefix": "s-ondestroy",
+  "svelte-style-tag": {
+    "prefix": "s-style",
     "body": [
-      "onDestroy(${1}() => {",
-      "\t${2:// content here}",
-      "});"
+      "<style lang=\"scss\">",
+      "</style>"
     ],
-    "description": "onDestroy lifecycle function"
-  },
-  "svelte-dispatch": {
-    "prefix": "s-dispatch",
-    "body": [
-      "const dispatch = createEventDispatcher<{ ${1://name: type} }>();"
-    ],
-    "description": "svelte dispatch"
+    "description": "svelte style tag"
   }
 }

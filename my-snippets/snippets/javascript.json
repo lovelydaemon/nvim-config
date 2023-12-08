@@ -1,0 +1,38 @@
+{
+  "function": {
+    "prefix": "function",
+    "body": [
+      "function ${1}(${2}) {",
+      "\t${3://code}",
+      "}"
+    ],
+    "description": "just a function"
+  },
+  "console-log": {
+    "prefix": "log",
+    "body": [
+      "console.log(${1});"
+    ],
+    "description": "shortcut for console.log()"
+  },
+  "switch": {
+    "prefix": "switch",
+    "body": [
+      "switch (${1}) {",
+      "\tcase ${2}:",
+      "\t\t${3}",
+      "\t\tbreak;",
+      "}"
+    ],
+    "description": "switch case"
+  },
+  "case": {
+    "prefix": "case",
+    "body": [
+      "case ${1}:",
+      "\t${2}",
+      "\tbreak;"
+    ],
+    "description": "case"
+  }
+}

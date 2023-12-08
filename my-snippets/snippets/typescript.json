@@ -1,20 +1,4 @@
 {
-  "function": {
-    "prefix": "function",
-    "body": [
-      "function ${1}(${2}) {",
-      "\t${3://code}",
-      "}"
-    ],
-    "description": "just a function"
-  },
-  "console-log": {
-    "prefix": "log",
-    "body": [
-      "console.log(${1});"
-    ],
-    "description": "shortcut for console.log()"
-  },
   "adsight-export-interface": {
     "prefix": "exp-int",
     "body": [
