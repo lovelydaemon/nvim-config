@@ -130,6 +130,7 @@ lsp_zero.format_on_save({
     ['cssls'] = { 'css', 'scss' },
     ['tsserver'] = { 'javascript', 'typescript' },
     ['ruby_ls'] = { 'ruby' },
-    ['jsonls'] = { 'json' }
+    ['jsonls'] = { 'json' },
+    ['volar'] = { 'vue' }
   }
 })
