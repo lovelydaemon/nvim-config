@@ -31,9 +31,16 @@
         "language": [
           "typescript",
           "javascript",
-          "svelte"
+          "svelte",
+          "vue"
         ],
         "path": "./snippets/javascript.json"
+      },
+      {
+        "language": [
+          "vue"
+        ],
+        "path": "./snippets/vue.json"
       }
     ]
   }

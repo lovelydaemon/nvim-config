@@ -1,0 +1,37 @@
+{
+  "base vue template": {
+    "prefix": "v-base",
+    "body": [
+      "<script setup lang='ts'>",
+      "",
+      "</script>",
+      "",
+      "<template>",
+      "",
+      "</template>",
+      "",
+      "<style scoped>",
+      "",
+      "</style>"
+    ],
+    "description": "Base vue template"
+  },
+  "script block": {
+    "prefix": "v-script",
+    "body": [
+      "<script setup lang='ts'>",
+      "",
+      "</script>"
+    ],
+    "description": "script block"
+  },
+  "style block": {
+    "prefix": "v-style",
+    "body": [
+      "<style scoped>",
+      "",
+      "</style>"
+    ],
+    "description": "style block"
+  }
+}
