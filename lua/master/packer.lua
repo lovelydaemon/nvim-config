@@ -14,6 +14,8 @@ return require 'packer'.startup(function(use)
 
   -- Git
   use 'lewis6991/gitsigns.nvim'
+  use 'tpope/vim-fugitive'
+  use 'rbong/vim-flog'
 
   -- Treesitter highlight code
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
