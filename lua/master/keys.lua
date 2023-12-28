@@ -51,8 +51,8 @@ vim.keymap.set('v', '<leader>[', 'vbi[<Esc>ea]<Esc>')
 vim.keymap.set('v', '<leader>{', 'vbi{<Esc>ea}<Esc>')
 
 --Git
-vim.keymap.set('n', ']c', ':Git next_hunk<CR>')
-vim.keymap.set('n', '[c', ':Git prev_hunk<CR>')
+vim.keymap.set('n', ']c', ':Gitsigns next_hunk<CR>')
+vim.keymap.set('n', '[c', ':Gitsigns prev_hunk<CR>')
 
 -- replace all
 vim.keymap.set('n', '<leader>ra', '* :%s/')
