@@ -34,5 +34,14 @@
       "\tbreak;"
     ],
     "description": "case"
+  },
+  "for": {
+    "prefix": "for",
+    "body": [
+      "for (let i = 0; i < ${1}; i++) {",
+      "\t${2}",
+      "}"
+    ],
+    "description": "for loop"
   }
 }
