@@ -128,7 +128,7 @@ lsp_zero.format_on_save({
     ['lua_ls'] = { 'lua' },
     ['svelte'] = { 'svelte' },
     ['cssls'] = { 'css', 'scss' },
-    ['tsserver'] = { 'javascript', 'typescript' },
+    ['tsserver'] = { 'javascript', 'typescript', 'typescriptreact', 'javascriptreact' },
     ['ruby_ls'] = { 'ruby' },
     ['jsonls'] = { 'json' },
     ['volar'] = { 'vue' }
