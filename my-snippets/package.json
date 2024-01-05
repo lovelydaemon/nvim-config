@@ -32,7 +32,9 @@
           "typescript",
           "javascript",
           "svelte",
-          "vue"
+          "vue",
+          "typescriptreact",
+          "javascriptreact"
         ],
         "path": "./snippets/javascript.json"
       },
