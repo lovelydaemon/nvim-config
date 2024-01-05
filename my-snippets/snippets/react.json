@@ -1,0 +1,15 @@
+{
+  "react-component": {
+    "prefix": "r-base",
+    "body": [
+      "function ${1}(${2}) {",
+      "\treturn (",
+      "\t\t${3}",
+      "\t);",
+      "}",
+      "",
+      "export default ${1}"
+    ],
+    "description": "react default component"
+  }
+}

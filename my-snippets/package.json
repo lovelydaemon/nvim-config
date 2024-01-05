@@ -4,6 +4,13 @@
     "snippets": [
       {
         "language": [
+          "typescriptreact",
+          "javascriptreact"
+        ],
+        "path": "./snippets/react.json"
+      },
+      {
+        "language": [
           "svelte"
         ],
         "path": "./snippets/svelte.json"
