@@ -13,6 +13,13 @@
           "typescriptreact",
           "javascriptreact"
         ],
+        "path": "./snippets/jsx.json"
+      },
+      {
+        "language": [
+          "typescriptreact",
+          "javascriptreact"
+        ],
         "path": "./snippets/react.json"
       },
       {
