@@ -1,0 +1,9 @@
+{
+  "comment line": {
+    "prefix": "comment",
+    "body": [
+      "<!-- ${1} -->"
+    ],
+    "description": "comment html line"
+  }
+}
