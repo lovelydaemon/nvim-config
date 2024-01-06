@@ -22,7 +22,7 @@
   "react-interface-props": {
     "prefix": "r-props",
     "body": [
-      "interface Props {${1}};"
+      "interface Props {${1}}"
     ],
     "description": "react interface props"
   }
