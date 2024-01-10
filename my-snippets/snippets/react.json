@@ -2,7 +2,7 @@
   "react-component": {
     "prefix": "base",
     "body": [
-      "function ${1}(${2}) {",
+      "export default function ${1}(${2}) {",
       "\t${3}",
       "",
       "\treturn (",
@@ -10,9 +10,7 @@
       "\t\t\t${4}",
       "\t\t</>",
       "\t);",
-      "}",
-      "",
-      "export default ${1}"
+      "}"
     ],
     "description": "react default component"
   },
