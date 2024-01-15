@@ -23,6 +23,11 @@ mason_lspconfig.setup({
           "typescriptreact" },
       })
     end,
+    tailwindcss = function()
+      lspconfig.tailwindcss.setup({
+        autostart = false
+      })
+    end,
   }
 })
 
