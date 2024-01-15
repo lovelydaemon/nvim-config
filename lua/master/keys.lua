@@ -1,6 +1,7 @@
 --disable default
 vim.keymap.set('n', '<Space>', '<nop>')
 vim.keymap.set('n', 'Q', '<nop>')
+vim.keymap.set('n', 'q', '<nop>')
 
 --remap the leader key
 vim.g.mapleader = ' '
