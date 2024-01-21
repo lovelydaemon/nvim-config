@@ -12,6 +12,9 @@ return require 'packer'.startup(function(use)
   use 'sainnhe/sonokai'
   use 'rebelot/kanagawa.nvim'
 
+  -- Formatter
+  use 'mhartington/formatter.nvim'
+
   -- Git
   use 'lewis6991/gitsigns.nvim'
 
