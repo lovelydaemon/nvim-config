@@ -134,8 +134,7 @@ lsp_zero.format_on_save({
     ['svelte'] = { 'svelte' },
     ['cssls'] = { 'css', 'scss' },
     ['tsserver'] = { 'javascript', 'typescript', 'typescriptreact', 'javascriptreact' },
-    ['ruby_ls'] = { 'ruby' },
     ['jsonls'] = { 'json' },
-    ['volar'] = { 'vue' }
+    ['prismals'] = { 'prisma' }
   }
 })

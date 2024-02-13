@@ -19,20 +19,5 @@ vim.g.sonokai_colors_override = {
   purple = { '#9682B5', '176' },
 }
 
--- Custom term
---vim.g.sonokai_colors_override = {
---  bg_dim = { '#201E28', '232' },
---  bg0 = { '#242530', '235' },
---  bg2 = { '#2C2936', '236' },
---  bg_blue = { '#7E9CD8', '110' },
---  bg_green = { '#98BB6C', '107' },
---  fg = { '#FBFBFB', '250' },
---  red = { '#F95370', '203' },
---  blue = { '#7E9CD8', '110' },
---  green = { '#C3E88D', '107' },
---  yellow = { '#FCCB6B', '179' },
---  orange = { '#FA981F', '215' },
---  purple = { '#C792EA', '176' },
---}
 -- setup must be called before loading
 vim.cmd("colorscheme sonokai")

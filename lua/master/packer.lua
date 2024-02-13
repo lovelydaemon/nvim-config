@@ -10,7 +10,6 @@ return require 'packer'.startup(function(use)
 
   -- Colorscheme(s)
   use 'sainnhe/sonokai'
-  use 'rebelot/kanagawa.nvim'
 
   -- Formatter
   use 'mhartington/formatter.nvim'
