@@ -4,6 +4,12 @@
     "snippets": [
       {
         "language": [
+          "go"
+        ],
+        "path": "./snippets/go.json"
+      },
+      {
+        "language": [
           "html"
         ],
         "path": "./snippets/html.json"
