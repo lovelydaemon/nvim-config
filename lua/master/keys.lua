@@ -46,11 +46,10 @@ vim.keymap.set('n', '<leader>gd', ':vsplit | :wincmd w | lua vim.lsp.buf.definit
 vim.keymap.set('n', '<leader>e', ':NvimTreeFindFileToggle <CR>')
 
 --visual
-vim.keymap.set('v', '<leader>\'', 'vbi\'<Esc>ea\'<Esc>')
-vim.keymap.set('v', '<leader>"', 'vbi"<Esc>ea"<Esc>')
-vim.keymap.set('v', '<leader>[', 'vbi[<Esc>ea]<Esc>')
-vim.keymap.set('v', '<leader>{', 'vbi{<Esc>ea}<Esc>')
-
+vim.keymap.set('v', '<leader>\'', 'vviw<Esc>a\'<Esc>bi\'<Esc>')
+vim.keymap.set('v', '<leader>"', 'vviw<Esc>a"<Esc>bi"<Esc>')
+vim.keymap.set('v', '<leader>[', 'vviw<Esc>a]<Esc>bi[<Esc>')
+vim.keymap.set('v', '<leader>{', 'vviw<Esc>a}<Esc>bi{<Esc>')
 --Git
 vim.keymap.set('n', ']c', ':Gitsigns next_hunk<CR>')
 vim.keymap.set('n', '[c', ':Gitsigns prev_hunk<CR>')
