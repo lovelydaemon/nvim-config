@@ -2,7 +2,7 @@
   "comment line": {
     "prefix": "comment",
     "body": [
-      "<!-- ${1} -->"
+      "<!-- ${0:comment} -->"
     ],
     "description": "comment html line"
   }
