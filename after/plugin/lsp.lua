@@ -19,8 +19,18 @@ mason_lspconfig.setup({
     end,
     emmet_language_server = function()
       lspconfig.emmet_language_server.setup({
-        filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "pug",
-          "typescriptreact" },
+        filetypes = {
+          "css",
+          "eruby",
+          "html",
+          "javascript",
+          "javascriptreact",
+          "less",
+          "sass",
+          "scss",
+          "pug",
+          "typescriptreact"
+        },
       })
     end,
     tailwindcss = function()
@@ -50,17 +60,23 @@ local cmp_maps = {
     end
   end,
   ['<Tab>'] = cmp.mapping(function(fallback)
-    if cmp.visible() then
+    if cmp.visible() and not luasnip.in_snippet() then
       cmp.confirm({ select = true })
-    elseif luasnip.locally_jumpable(1) then
+    elseif luasnip.jumpable(1) and luasnip.in_snippet() then
       luasnip.jump(1)
+      if not luasnip.jumpable(1) then
+        luasnip.unlink_current()
+      end
     else
       fallback()
     end
   end, { "i", "s" }),
   ['<S-Tab>'] = cmp.mapping(function(fallback)
-    if luasnip.locally_jumpable(-1) then
+    if luasnip.jumpable(-1) and luasnip.in_snippet() then
       luasnip.jump(-1)
+      if not luasnip.jumpable(-1) then
+        luasnip.unlink_current()
+      end
     else
       fallback()
     end
