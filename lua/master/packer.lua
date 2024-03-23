@@ -50,4 +50,12 @@ return require 'packer'.startup(function(use)
 
   -- Autopairs
   use 'windwp/nvim-autopairs'
+
+  -- gotests
+  use {
+    'yanskun/gotests.nvim',
+    ft = "go",
+    config = function()
+      require("gotests").setup()
+    end, }
 end)
