@@ -1,22 +1,16 @@
 {
-  "if error nil": {
-    "prefix": "iferr",
-    "body": [
-      "if err != nil {",
-      "\treturn ${0:err}",
-      "}"
-    ],
+  "if error != nil": {
+    "prefix": "ern",
+    "body": "err != nil $0",
     "description": "shortcut for if err != nil"
   },
   "for loop": {
     "prefix": "for",
-    "body": [
-      "for ${1} := ${2}; ${1} < ${3}; ${1}++$0"
-    ],
+    "body": "for ${1} := ${2}; ${1} < ${3}; ${1}++$0",
     "description": "for snippet"
   },
   "for range": {
-    "prefix": "forrange",
+    "prefix": "forr",
     "body": [
       "for ${1:i}, ${2:v} := range ${3:arr} {",
       "\t$0",
@@ -26,9 +20,12 @@
   },
   "fmain": {
     "prefix": "fmain",
-    "body": [
-      "func main() {$0}"
-    ],
+    "body": "func main() {$0}",
     "description": "function main"
+  },
+  "http ResponseWriter *Request": {
+    "prefix": "wr",
+    "body": "${1:w} http.ResponseWriter, ${2:r} *http.Request$0",
+    "description": "http handler declaration"
   }
 }

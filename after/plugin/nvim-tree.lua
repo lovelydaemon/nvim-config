@@ -36,6 +36,7 @@ require('nvim-tree').setup {
   },
   diagnostics = {
     enable = true,
+    show_on_dirs = true,
     show_on_open_dirs = false,
     debounce_delay = 100,
     icons = {
