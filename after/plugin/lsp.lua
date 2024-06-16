@@ -10,6 +10,7 @@ mason_lspconfig.setup({
   ensure_installed = {
     'tsserver',
     'lua_ls',
+    'eslint@4.8.0'
   },
   handlers = {
     lsp_zero.default_setup,

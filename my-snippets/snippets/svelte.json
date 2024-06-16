@@ -27,5 +27,10 @@
       "</style>"
     ],
     "description": "svelte style tag"
+  },
+  "svelte-comment-component": {
+    "prefix": "s-comment",
+    "body": "<!-- @component ${1:comment} -->$0",
+    "description": "svelte comment component"
   }
 }

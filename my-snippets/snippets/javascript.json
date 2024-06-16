@@ -56,5 +56,10 @@
       "}"
     ],
     "description": "for of loop"
+  },
+  "comment": {
+    "prefix": "comment",
+    "body": "/** ${1:comment} */$0",
+    "description": "js comment"
   }
 }
