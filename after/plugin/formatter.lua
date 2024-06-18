@@ -13,6 +13,15 @@ require("formatter").setup {
     },
     javascriptreact = {
       require("formatter.filetypes.javascriptreact").prettierd
+    },
+    scss = {
+      function()
+        return {
+          exe = 'prettierd',
+          args = { vim.api.nvim_buf_get_name(0) },
+          stdin = true
+        }
+      end
     }
   }
 }
