@@ -163,7 +163,7 @@ lsp_zero.format_on_save({
     ['lua_ls'] = { 'lua' },
     ['svelte'] = { 'svelte' },
     ['stylelint_lsp'] = { 'css', 'scss' },
-    ['tsserver'] = { 'javascript', 'typescript', 'typescriptreact', 'javascriptreact' },
+    --['tsserver'] = { 'javascript', 'typescript', 'typescriptreact', 'javascriptreact' },
     ['jsonls'] = { 'json' },
     ['prismals'] = { 'prisma' }
   }
