@@ -8,6 +8,14 @@
     ],
     "description": "just a function"
   },
+  "console.time": {
+    "prefix": "time",
+    "body": [
+      "console.time($1)",
+      "console.timeEnd($1)$0"
+    ],
+    "description": "console.time and console.timeEnd"
+  },
   "console-log": {
     "prefix": "log",
     "body": [
