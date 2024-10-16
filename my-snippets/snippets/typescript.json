@@ -1,1 +1,46 @@
-{}
+{
+  "nest-module": {
+    "prefix": "ns-module",
+    "body": [
+      "@Module({",
+      "\timports: [],",
+      "\tcontrollers: [$0Controller],",
+      "\tproviders: [$0Service],",
+      "\texports: [$0Service],",
+      "})",
+      "",
+      "export class $0Module {}"
+    ],
+    "description": "nest.js module file"
+  },
+  "nest-controller": {
+    "prefix": "ns-controller",
+    "body": [
+      "@Controller()",
+      "export class $0Controller {",
+      "\tconstructor() {}",
+      "",
+      "\t@Get()",
+      "\tlist() {",
+      "\t\treturn 'return list collection'",
+      "\t}",
+      "",
+      "\t@Post()",
+      "\tcreate() {",
+      "\t\treturn 'return created item'",
+      "\t}",
+      "",
+      "\t@Put()",
+      "\tupdate() {",
+      "\t\treturn 'return updated item'",
+      "\t}",
+      "",
+      "\t@Delete()",
+      "\tdelete() {",
+      "\t\treturn 'detele item'",
+      "\t}",
+      "}"
+    ],
+    "description": "nest.js cotroller file"
+  }
+}
