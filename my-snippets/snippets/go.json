@@ -20,7 +20,11 @@
   },
   "fmain": {
     "prefix": "fmain",
-    "body": "func main() {$0}",
+    "body": [
+      "package main",
+      "",
+      "func main() {$0}"
+    ],
     "description": "function main"
   },
   "http ResponseWriter *Request": {
