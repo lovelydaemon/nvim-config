@@ -1,5 +1,5 @@
 vim.opt.nu = true
-vim.opt.rnu = true
+vim.opt.relativenumber = false
 
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
@@ -33,11 +33,11 @@ vim.opt.showmode = true
 vim.opt.clipboard = 'unnamedplus'
 
 vim.diagnostic.config {
-  virtual_text = false
+	virtual_text = false
 }
 
 vim.opt.fillchars = {
-  eob = ' '
+	eob = ' '
 }
 
 vim.g.loaded_netrw = 1
