@@ -6,8 +6,12 @@
   },
   "for loop": {
     "prefix": "for",
-    "body": "for ${1} := ${2}; ${1} < ${3}; ${1}++$0",
-    "description": "for snippet"
+    "body": [
+      "for ${1:i} := ${2:0}; ${1:i} < ${3}; ${1:i}++ {",
+      "\t$0",
+      "}"
+    ],
+    "description": "for loop"
   },
   "for range": {
     "prefix": "forr",
@@ -16,7 +20,7 @@
       "\t$0",
       "}"
     ],
-    "description": "for range snippet"
+    "description": "for range"
   },
   "fmain": {
     "prefix": "fmain",
@@ -31,5 +35,50 @@
     "prefix": "wr",
     "body": "${1:w} http.ResponseWriter, ${2:r} *http.Request$0",
     "description": "http handler declaration"
+  },
+  "xml struct tag": {
+    "prefix": "xml-tag",
+    "body": "`xml:\"$0\"`",
+    "description": "xml struct tag"
+  },
+  "json struct tag": {
+    "prefix": "json-tag",
+    "body": "`json:\"$0\"`",
+    "description": "json struct tag"
+  },
+  "function receiver": {
+    "prefix": "func-receiver",
+    "body": "func ($1 *$2) $3($4) $5 {$0}",
+    "description": "function receiver"
+  },
+  "test function": {
+    "prefix": "func-test",
+    "body": [
+      "func Test$1 (t *testing.T) {$0}"
+    ],
+    "description": "testing function template"
+  },
+  "benchmark function": {
+    "prefix": "func-benchmark",
+    "body": [
+      "func Benchmark$1 (b *testing.B) {",
+      "\tfor i := 0; i < b.N ; i++ {",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "benchmark function template"
+  },
+  "assert func": {
+    "prefix": "func-assert",
+    "body": [
+      "func assert$1(t testing.TB, ${2:got, want string}) {",
+      "\tt.Helper()",
+      "\tif got != want {",
+      "\t\tt.Errorf(\"got ${3:%q} want ${4:%q}\", got, want)",
+      "\t}",
+      "}$0"
+    ],
+    "description": "assert helper function for want got"
   }
 }
