@@ -1,3 +1,14 @@
+require('telescope').setup({
+  defaults = {
+    layout_config = {
+      horizontal = {
+        width = 0.99,
+        height = 0.99
+      },
+    },
+  }
+})
+
 local builtin = require 'telescope.builtin'
 
 vim.keymap.set('n', '<leader>pf', builtin.git_status, {})
