@@ -8,7 +8,7 @@ local cmp = require 'cmp'
 mason.setup()
 mason_lspconfig.setup({
   ensure_installed = {
-    'tsserver',
+    'ts_ls',
     'lua_ls',
     'eslint@4.8.0'
   },
@@ -163,7 +163,7 @@ lsp_zero.format_on_save({
     ['lua_ls'] = { 'lua' },
     ['svelte'] = { 'svelte' },
     ['stylelint_lsp'] = { 'css', 'scss' },
-    --['tsserver'] = { 'javascript', 'typescript', 'typescriptreact', 'javascriptreact' },
+    --['ts_ls'] = { 'javascript', 'typescript', 'typescriptreact', 'javascriptreact' },
     ['jsonls'] = { 'json' },
     ['prismals'] = { 'prisma' }
   }
