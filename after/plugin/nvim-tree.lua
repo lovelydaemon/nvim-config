@@ -2,7 +2,7 @@ require('nvim-tree').setup {
   hijack_cursor = true,
   view = {
     side = 'right',
-    width = 40,
+    width = 60,
     centralize_selection = true,
     debounce_delay = 100,
   },
