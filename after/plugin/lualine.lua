@@ -32,7 +32,7 @@ lualine.setup {
   },
   sections = {
     lualine_a = { 'mode' },
-    lualine_b = { 'branch', diff },
+    lualine_b = {},
     lualine_c = { { 'filename', path = 4 } },
 
     lualine_x = { diagnostics },
@@ -44,7 +44,7 @@ lualine.setup {
     lualine_b = {},
     lualine_c = { { 'filename', path = 4 } },
 
-    lualine_x = { 'location' },
+    lualine_x = {},
     lualine_y = {},
     lualine_z = {}
   },
