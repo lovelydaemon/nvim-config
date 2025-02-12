@@ -19,5 +19,6 @@
   "oil.nvim": { "branch": "master", "commit": "abbfbd0dbcaa78c3dcdada191ea23e50a41e5806" },
   "plenary.nvim": { "branch": "master", "commit": "3707cdb1e43f5cea73afb6037e6494e7ce847a66" },
   "sonokai": { "branch": "master", "commit": "59c0778ee93f52d8895e8947e123b6acf1744d07" },
-  "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" }
+  "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
+  "tsc.nvim": { "branch": "main", "commit": "59abb6f3f24a3ca80708f694af4e2b727a1a3211" }
 }
