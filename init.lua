@@ -1,2 +1,1 @@
-require'master'
-
+require("config.lazy")
