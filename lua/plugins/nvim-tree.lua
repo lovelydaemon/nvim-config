@@ -9,14 +9,14 @@ return {
     hijack_cursor = true,
     view = {
       side = 'right',
-      width = 40,
+      width = 50,
       centralize_selection = true,
       debounce_delay = 100,
     },
     renderer = {
       indent_width = 2,
       highlight_git = false,
-      highlight_diagnostics = true,
+      highlight_diagnostics = false,
       highlight_modified = 'none',
       icons = {
         git_placement = 'after',
@@ -42,7 +42,7 @@ return {
       show_on_open_dirs = false,
     },
     diagnostics = {
-      enable = true,
+      enable = false,
       show_on_dirs = true,
       show_on_open_dirs = false,
       debounce_delay = 100,
