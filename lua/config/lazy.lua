@@ -62,7 +62,12 @@ vim.opt.fillchars = {
   eob = ' '
 }
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Keys
+
+vim.keymap.set('n', '<leader>e', ':NvimTreeFindFileToggle <CR>')
 --disable default
 vim.keymap.set('n', '<Space>', '<nop>')
 vim.keymap.set('n', 'Q', '<nop>')
