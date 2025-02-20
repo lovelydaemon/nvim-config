@@ -56,6 +56,11 @@ return {
     modified = {
       enable = true
     },
+    actions = {
+      open_file = {
+        quit_on_open = true
+      },
+    },
     filesystem_watchers = {
       debounce_delay = 100
     }
