@@ -122,7 +122,7 @@ return {
             [vim.diagnostic.severity.INFO] = '',
           }
         },
-        underline = false
+        underline = true
       })
     end,
     config = function()
