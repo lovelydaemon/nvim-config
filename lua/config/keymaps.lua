@@ -44,3 +44,8 @@ vim.keymap.set('n', '[c', ':Gitsigns prev_hunk<CR>')
 
 -- replace all
 vim.keymap.set('n', '<leader>ra', '* :%s/')
+
+-- curl
+vim.keymap.set('n', '<leader>bb', 'vip:!zsh<CR>')
+vim.keymap.set('n', '<leader>bj', 'vip:!zsh | jq<CR>')
+vim.keymap.set('n', '<leader>jj', 'vip:!jq<CR>')
