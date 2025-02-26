@@ -42,5 +42,40 @@
       "}"
     ],
     "description": "nest.js cotroller file"
+  },
+  "vitest-test-template": {
+    "prefix": "ns-test",
+    "body": [
+      "import { describe, expect, test } from 'vitest';",
+      "",
+      "describe('$1', () => {",
+      "\ttest('$2', () => {",
+      "\t\t$0",
+      "\t\texpect()",
+      "\t})",
+      "})"
+    ],
+    "description": "vitest test template"
+  },
+  "vitest-test-template-dto": {
+    "prefix": "ns-test-dto",
+    "body": [
+      "import { plainToInstance } from 'class-transformer';",
+      "import { validate } from 'class-validator';",
+      "import { describe, expect, test } from 'vitest';",
+      "",
+      "describe('$1', () => {",
+      "\ttest('should pass with correct data', async () => {",
+      "\t\tconst body = {$0};",
+      "\t\tconst dto = plainToInstance($2, body);",
+      "",
+      "\t\tconst errors = await validate(dto);",
+      "\t\tconst hasErrors = errors.length > 0;",
+      "",
+      "\t\texpect(hasErrors).toBeFalsy();",
+      "\t})",
+      "})"
+    ],
+    "description": "vitest test template for dto"
   }
 }
