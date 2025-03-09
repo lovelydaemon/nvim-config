@@ -69,6 +69,12 @@
           "vue"
         ],
         "path": "./snippets/vue.json"
+      },
+      {
+        "language": [
+          "typescript"
+        ],
+        "path": "./snippets/nest.json"
       }
     ]
   }

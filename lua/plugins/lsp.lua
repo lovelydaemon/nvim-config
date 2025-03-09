@@ -163,6 +163,22 @@ return {
           function(server_name)
             lspconfig[server_name].setup({})
           end,
+          html = function()
+            lspconfig.html.setup({
+              filetypes = {
+                "html",
+                "handlebars"
+              }
+            })
+          end,
+          emmet_language_server = function()
+            lspconfig.emmet_language_server.setup({
+              filetypes = {
+                "html",
+                "handlebars"
+              }
+            })
+          end,
           lua_ls = function()
             lspconfig.lua_ls.setup({
               settings = {
