@@ -140,5 +140,19 @@
       "}"
     ],
     "description": "nest.js repository template file"
+  },
+  "nest-usecase-class": {
+    "prefix": "ns-usecase",
+    "body": [
+      "import { Injectable } from '@nestjs/common';",
+      "",
+      "@Injectable()",
+      "export class $1UseCase {",
+      "\tconstructor() {}",
+      "",
+      "\tasync execute() {}",
+      "}"
+    ],
+    "description": "nest.js usecase template file"
   }
 }
