@@ -9,7 +9,7 @@ return {
     hijack_cursor = true,
     view = {
       side = 'right',
-      width = 50,
+      width = 60,
       centralize_selection = true,
       debounce_delay = 100,
     },
