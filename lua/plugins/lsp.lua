@@ -180,13 +180,6 @@ return {
               }
             })
           end,
-          docker_compose_language_service = function()
-            lspconfig.docker_compose_language_service.setup({
-              filetypes = {
-                "yaml"
-              }
-            })
-          end,
           lua_ls = function()
             lspconfig.lua_ls.setup({
               settings = {
