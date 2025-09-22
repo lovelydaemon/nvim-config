@@ -46,6 +46,11 @@
     "body": "`json:\"$0\"`",
     "description": "json struct tag"
   },
+  "env struct tag": {
+    "prefix": "env-tag",
+    "body": "`env:\"$0\"`",
+    "description": "env struct tag"
+  },
   "function receiver": {
     "prefix": "func-receiver",
     "body": "func ($1 *$2) $3($4) $5 {$0}",
