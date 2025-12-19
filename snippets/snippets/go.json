@@ -83,7 +83,6 @@
       "\t$2",
       "",
       "\t})",
-      "}",
       "}"
     ],
     "description": "table testing"
@@ -317,9 +316,9 @@
       "// @Accept json",
       "// @Produce json",
       "// @Param ${5:param_name} ${6:where (query|path|body)} ${7:go_type} ${8:required (true/false)} \"${9:description}\"",
-      "// @Success 200 {object} res.Success{data=${10:response_type}}}",
-      "// @Failure 400 {object} res.Error",
-      "// @Failure 500 {object} res.Error",
+      "// @Success 200 {object} send.SuccessResponse{data=${10:response_type}}",
+      "// @Failure 400 {object} send.AppError",
+      "// @Failure 500 {object} send.AppError",
       "// @Router ${11:/route/} [${12:method (get|post|put|patch|delete)}]."
     ],
     "description": "swagger doc template"
