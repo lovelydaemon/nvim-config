@@ -22,15 +22,6 @@
     ],
     "description": "for range"
   },
-  "fmain": {
-    "prefix": "fmain",
-    "body": [
-      "package main",
-      "",
-      "func main() {$0}"
-    ],
-    "description": "function main"
-  },
   "http ResponseWriter *Request": {
     "prefix": "wr",
     "body": "${1:w} http.ResponseWriter, ${2:r} *http.Request$0",
@@ -271,8 +262,8 @@
     ],
     "description": "squirrel update builder"
   },
-  "pgx scan rows": {
-    "prefix": "scan-rows",
+  "pgx query rows": {
+    "prefix": "query rows",
     "body": [
       "rows, err := conn.Query(ctx, query, args...)",
       "if err != nil {",
@@ -304,7 +295,7 @@
       "",
       "return ${2:results}, nil"
     ],
-    "description": "pgx scan rows"
+    "description": "pgx query rows"
   },
   "swagger docs": {
     "prefix": "swag-docs",

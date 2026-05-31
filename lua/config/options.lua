@@ -26,6 +26,9 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
 vim.opt.mouse = ''
 vim.opt.showmode = true
 

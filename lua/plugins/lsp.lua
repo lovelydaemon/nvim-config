@@ -156,9 +156,7 @@ return {
 
       mason_lspconfig.setup({
         ensure_installed = {
-          'ts_ls',
           'lua_ls',
-          'eslint@4.8.0'
         },
         handlers = {
           function(server_name)
