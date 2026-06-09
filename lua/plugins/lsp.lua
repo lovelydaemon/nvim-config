@@ -146,6 +146,34 @@ return {
 				html = { filetypes = { "html", "handlebars" } },
 				emmet_language_server = { filetypes = { "html", "handlebars" } },
 				lua_ls = {},
+				yamlls = {
+					settings = {
+						yaml = {
+							schemaStore = {
+								enable = true,
+								url = "",
+							},
+
+							schemas = {
+								["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = {
+									"docker-compose*.yml",
+									"docker-compose*.yaml",
+									"compose*.yml",
+									"compose*.yaml",
+								},
+
+								["https://spec.openapis.org/oas/3.0/schema/2024-10-18"] = {
+									"openapi*.yml",
+									"openapi*.yaml",
+									"swagger*.yml",
+									"swagger*.yaml",
+									"*api*.yml",
+									"*api*.yaml",
+								},
+							},
+						},
+					},
+				},
 			}
 
 			require("mason-lspconfig").setup({
