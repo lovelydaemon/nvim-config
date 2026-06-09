@@ -1,3 +1,6 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
 -- Options
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -6,8 +9,6 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
-
-vim.opt.smartindent = true
 vim.opt.wrap = false
 
 vim.opt.swapfile = false
@@ -16,12 +17,9 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false
-vim.opt.incsearch = true
-
-vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 10
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
@@ -29,21 +27,18 @@ vim.opt.updatetime = 50
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
-vim.opt.mouse = ''
+vim.opt.mouse = ""
 vim.opt.showmode = true
 
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = "unnamedplus"
 
-vim.diagnostic.config {
-  virtual_text = false
-}
+vim.diagnostic.config({
+	virtual_text = false,
+})
 
 vim.opt.fillchars = {
-  eob = ' '
+	eob = " ",
 }
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"

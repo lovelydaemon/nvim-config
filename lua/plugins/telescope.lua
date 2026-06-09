@@ -4,24 +4,19 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim"
   },
-  config = function()
-    local telescope = require('telescope')
-
-    telescope.setup({
-      defaults = {
-        layout_config = {
-          horizontal = {
-            width = 0.99,
-            height = 0.99
-          },
+  keys = {
+    { "<C-p>",      function() require('telescope.builtin').find_files() end, desc = "Telescope: Find Files" },
+    { "<leader>pf", function() require('telescope.builtin').git_status() end, desc = "Telescope: Git Status" },
+    { "<leader>ps", function() require('telescope.builtin').live_grep() end,  desc = "Telescope: Live Grep" },
+  },
+  opts = {
+    defaults = {
+      layout_config = {
+        horizontal = {
+          width = 0.99,
+          height = 0.99
         },
-      }
-    })
-
-    local builtin = require 'telescope.builtin'
-
-    vim.keymap.set('n', '<leader>pf', builtin.git_status, {})
-    vim.keymap.set('n', '<C-p>', builtin.find_files, {})
-    vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})
-  end,
+      },
+    }
+  }
 }

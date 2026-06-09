@@ -3,13 +3,15 @@ return {
   event = { 'BufWritePre' },
   cmd = { 'ConformInfo' },
   opts = {
-    format_on_save = {
+    format_on_save = {},
+    default_format_opts = {
+      lsp_format = 'fallback',
       timeout_ms = 500,
-      lsp_format = 'fallback'
     },
     formatters_by_ft = {
-      javascript = { "prettierd", "prettier", stop_after_first = true },
-      typescript = { "prettierd", "prettier", stop_after_first = true },
+      lua = { "stylua" }
+      -- javascript = { "prettierd", "prettier", stop_after_first = true },
+      -- typescript = { "prettierd", "prettier", stop_after_first = true },
     }
   },
 }

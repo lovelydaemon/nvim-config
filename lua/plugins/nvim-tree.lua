@@ -5,6 +5,9 @@ return {
   dependencies = {
     'nvim-tree/nvim-web-devicons',
   },
+  keys = {
+    { "<leader>e", "<cmd>NvimTreeFindFileToggle<CR>", mode = "n", silent = true }
+  },
   opts = {
     hijack_cursor = true,
     view = {

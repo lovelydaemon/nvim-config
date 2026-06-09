@@ -3,9 +3,8 @@ return {
   dependencies = {
     'nvim-tree/nvim-web-devicons'
   },
-  config = function()
-    local lualine = require 'lualine'
-
+  event = "VeryLazy",
+  opts = function()
     local diagnostics = {
       'diagnostics',
       sources = { 'nvim_diagnostic' },
@@ -14,15 +13,14 @@ return {
       colored = true,
     }
 
-    lualine.setup {
+    return {
       options = {
         icons_enabled = true,
         theme = 'auto',
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
-        disabled_filetypes = {},
         always_divide_middle = true,
-        globalstatus = false,
+        globalstatus = true,
       },
       sections = {
         lualine_a = { 'mode' },
@@ -37,13 +35,10 @@ return {
         lualine_a = {},
         lualine_b = {},
         lualine_c = { { 'filename', path = 4 } },
-
         lualine_x = {},
         lualine_y = {},
         lualine_z = {}
       },
-      tabline = {},
-      extensions = {}
     }
   end
 }

@@ -26,6 +26,6 @@ return {
       filled_red = { '#E46876', '203' },
     }
 
-    vim.cmd([[colorscheme sonokai]])
+    vim.cmd.colorscheme("sonokai")
   end,
 }
