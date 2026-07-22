@@ -4,6 +4,15 @@
     "body": "err != nil $0",
     "description": "shortcut err != nil"
   },
+  "if err": {
+    "prefix": "ifer",
+    "body": [
+      "if err != nil {",
+      "\treturn err",
+      "}"
+    ],
+    "description": "shortcut if err != nil"
+  },
   "for loop": {
     "prefix": "for",
     "body": [

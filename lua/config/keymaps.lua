@@ -43,6 +43,6 @@ vim.keymap.set("v", "<leader>{", 'x<Esc>i{<C-r>"}<Esc>')
 vim.keymap.set("n", "<leader>ra", ":%s/\\<<C-r><C-w>\\>/")
 
 -- Curl
---vim.keymap.set('n', '<leader>bb', 'vip:!zsh<CR>', { silent = true })
---vim.keymap.set('n', '<leader>bj', 'vip:!zsh | jq<CR>', { silent = true })
+vim.keymap.set("n", "<leader>bb", "vip:!zsh<CR>", { silent = true })
+vim.keymap.set("n", "<leader>bj", "vip:!zsh | jq<CR>", { silent = true })
 --vim.keymap.set('n', '<leader>jj', 'vip:!jq<CR>', { silent = true })

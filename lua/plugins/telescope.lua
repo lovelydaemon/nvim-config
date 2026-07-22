@@ -26,6 +26,13 @@ return {
 			end,
 			desc = "Telescope: Live Grep",
 		},
+		{
+			"<leader>ch",
+			function()
+				require("telescope.builtin").command_history()
+			end,
+			desc = "Telescope: Command History",
+		},
 	},
 	opts = {
 		defaults = {

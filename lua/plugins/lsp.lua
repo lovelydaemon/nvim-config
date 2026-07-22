@@ -1,6 +1,6 @@
 return {
 	{
-		"sadhen/blink.cmp",
+		"saghen/blink.cmp",
 		version = "*",
 		event = "InsertEnter",
 		dependencies = {
@@ -48,7 +48,6 @@ return {
 					auto_show = true,
 					auto_show_delay_ms = 100,
 				},
-
 				menu = {
 					draw = {
 						columns = {
@@ -116,6 +115,12 @@ return {
 			vim.api.nvim_create_autocmd("LspAttach", {
 				desc = "LSP actions",
 				callback = function(event)
+					-- Запрещаем gopls внедрять свои цвета в подсветку
+					local client = vim.lsp.get_client_by_id(event.data.client_id)
+					if client and client.name == "gopls" then
+						client.server_capabilities.semanticTokensProvider = nil
+					end
+
 					local opts = { buffer = event.buf }
 
 					vim.keymap.set("n", "gd", function()
@@ -129,6 +134,9 @@ return {
 					end, opts)
 					vim.keymap.set("n", "[d", function()
 						vim.diagnostic.jump({ count = -1, float = true })
+					end, opts)
+					vim.keymap.set("n", "<leader>qf", function()
+						vim.diagnostic.setqflist()
 					end, opts)
 					vim.keymap.set("n", "<leader><C-.>", function()
 						vim.lsp.buf.code_action()
