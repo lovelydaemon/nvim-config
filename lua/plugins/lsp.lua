@@ -1,93 +1,5 @@
 return {
 	{
-		"saghen/blink.cmp",
-		version = "*",
-		event = "InsertEnter",
-		dependencies = {
-			{ "folke/lazydev.nvim", ft = "lua", opts = {} },
-		},
-		opts = {
-			keymap = {
-				preset = "none",
-				["<C-i>"] = { "show", "hide", "fallback" },
-				["<C-j>"] = { "select_next", "fallback" },
-				["<C-k>"] = { "select_prev", "fallback" },
-				["<CR>"] = { "accept", "fallback" },
-				["<Tab>"] = {
-					function(cmp)
-						if cmp.is_visible() and not cmp.snippet_active() then
-							return cmp.accept()
-						elseif cmp.snippet_active() then
-							return cmp.snippet_forward()
-						end
-					end,
-					"fallback",
-				},
-				["<S-Tab>"] = {
-					function(cmp)
-						if cmp.snippet_active() then
-							return cmp.snippet_backward()
-						else
-							return cmp.select_prev()
-						end
-					end,
-					"fallback",
-				},
-				["<C-u>"] = { "scroll_documentation_up", "fallback" },
-				["<C-d>"] = { "scroll_documentation_down", "fallback" },
-			},
-
-			completion = {
-				list = {
-					selection = {
-						preselect = true,
-						auto_insert = false,
-					},
-				},
-				documentation = {
-					auto_show = true,
-					auto_show_delay_ms = 100,
-				},
-				menu = {
-					draw = {
-						columns = {
-							{ "label", "label_description", gap = 1 },
-						},
-					},
-				},
-			},
-
-			signature = { enabled = true },
-
-			appearance = {
-				nerd_font_variant = "mono",
-			},
-
-			snippets = {
-				preset = "default",
-			},
-
-			fuzzy = {
-				frecency = { enabled = true },
-				use_proximity = true,
-			},
-
-			sources = {
-				default = { "lazydev", "lsp", "path", "snippets", "buffer" },
-				providers = {
-					lazydev = {
-						name = "LazyDev",
-						module = "lazydev.integrations.blink",
-						score_offset = 100,
-					},
-					lsp = { score_offset = 10 },
-					snippets = { score_offset = 0 },
-				},
-			},
-		},
-	},
-
-	{
 		"neovim/nvim-lspconfig",
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
@@ -109,54 +21,18 @@ return {
 				virtual_text = false,
 			})
 		end,
-		config = function()
-			require("mason").setup()
-
-			vim.api.nvim_create_autocmd("LspAttach", {
-				desc = "LSP actions",
-				callback = function(event)
-					-- Запрещаем gopls внедрять свои цвета в подсветку
-					local client = vim.lsp.get_client_by_id(event.data.client_id)
-					if client and client.name == "gopls" then
-						client.server_capabilities.semanticTokensProvider = nil
-					end
-
-					local opts = { buffer = event.buf }
-
-					vim.keymap.set("n", "gd", function()
-						vim.lsp.buf.definition()
-					end, opts)
-					vim.keymap.set("n", "gh", function()
-						vim.lsp.buf.hover()
-					end, opts)
-					vim.keymap.set("n", "]d", function()
-						vim.diagnostic.jump({ count = 1, float = true })
-					end, opts)
-					vim.keymap.set("n", "[d", function()
-						vim.diagnostic.jump({ count = -1, float = true })
-					end, opts)
-					vim.keymap.set("n", "<leader>qf", function()
-						vim.diagnostic.setqflist()
-					end, opts)
-					vim.keymap.set("n", "<leader><C-.>", function()
-						vim.lsp.buf.code_action()
-					end, opts)
-					vim.keymap.set("n", "<leader>vrr", function()
-						vim.lsp.buf.references()
-					end, opts)
-					vim.keymap.set("n", "<leader>vri", function()
-						vim.lsp.buf.implementation()
-					end, opts)
-					vim.keymap.set("n", "<leader>vrn", function()
-						vim.lsp.buf.rename()
-					end, opts)
-				end,
-			})
-
-			local servers = {
-				html = { filetypes = { "html", "handlebars" } },
-				emmet_language_server = { filetypes = { "html", "handlebars" } },
+		opts = {
+			servers = {
 				lua_ls = {},
+
+				gopls = {
+					settings = {
+						gopls = {
+							semanticTokens = false,
+						},
+					},
+				},
+
 				yamlls = {
 					settings = {
 						yaml = {
@@ -185,18 +61,59 @@ return {
 						},
 					},
 				},
-			}
+			},
+
+			exclude = { "rust_analyzer" },
+		},
+		config = function(_, opts)
+			require("mason").setup()
+
+			vim.api.nvim_create_autocmd("LspAttach", {
+				desc = "LSP actions",
+				callback = function(event)
+					local map = { buffer = event.buf }
+
+					vim.keymap.set("n", "gd", function()
+						vim.lsp.buf.definition()
+					end, map)
+					vim.keymap.set("n", "gh", function()
+						vim.lsp.buf.hover()
+					end, map)
+					vim.keymap.set("n", "]d", function()
+						vim.diagnostic.jump({ count = 1, float = true })
+					end, map)
+					vim.keymap.set("n", "[d", function()
+						vim.diagnostic.jump({ count = -1, float = true })
+					end, map)
+					vim.keymap.set("n", "<leader>qf", function()
+						vim.diagnostic.setqflist()
+					end, map)
+					vim.keymap.set("n", "<leader><C-.>", function()
+						vim.lsp.buf.code_action()
+					end, map)
+					vim.keymap.set("n", "<leader>vrr", function()
+						vim.lsp.buf.references()
+					end, map)
+					vim.keymap.set("n", "<leader>vri", function()
+						vim.lsp.buf.implementation()
+					end, map)
+					vim.keymap.set("n", "<leader>vrn", function()
+						vim.lsp.buf.rename()
+					end, map)
+				end,
+			})
+
+			vim.lsp.config("*", {
+				capabilities = require("blink.cmp").get_lsp_capabilities({}, true),
+			})
+
+			for name, cfg in pairs(opts.servers) do
+				vim.lsp.config(name, cfg)
+			end
 
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls" },
-				handlers = {
-					function(server_name)
-						local server_opts = servers[server_name] or {}
-
-						vim.lsp.config(server_name, server_opts)
-						vim.lsp.enable(server_name)
-					end,
-				},
+				ensure_installed = vim.tbl_keys(opts.servers),
+				automatic_enable = { exclude = opts.exclude },
 			})
 		end,
 	},
