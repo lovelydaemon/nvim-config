@@ -33,6 +33,24 @@ return {
 					},
 				},
 
+				basedpyright = {
+					settings = {
+						basedpyright = {
+							disableOrganizeImports = true,
+							analysis = {
+								typeCheckingMode = "standard",
+								diagnosticMode = "openFilesOnly",
+							},
+						},
+					},
+				},
+
+				ruff = {
+					on_attach = function(client)
+						client.server_capabilities.hoverProvider = false
+					end,
+				},
+
 				yamlls = {
 					settings = {
 						yaml = {

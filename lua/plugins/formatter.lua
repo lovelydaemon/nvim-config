@@ -12,6 +12,7 @@ return {
 			lua = { "stylua" },
 			javascript = { "prettierd", "prettier", stop_after_first = true },
 			typescript = { "prettierd", "prettier", stop_after_first = true },
+			python = { "ruff_organize_imports", "ruff_format" },
 		},
 	},
 }
