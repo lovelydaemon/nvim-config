@@ -34,6 +34,13 @@ return {
 				},
 
 				basedpyright = {
+					-- signatureHelp на методах ndarray (x.reshape(, x.sum()
+					-- считается десятками секунд: перебор generic-перегрузок
+					-- в заглушках numpy. Остальные запросы — единицы миллисекунд.
+					on_attach = function(client)
+						client.server_capabilities.signatureHelpProvider = nil
+					end,
+
 					settings = {
 						basedpyright = {
 							disableOrganizeImports = true,
