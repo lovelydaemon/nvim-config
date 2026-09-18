@@ -29,7 +29,7 @@ return {
 					settings = {
 						gopls = {
 							semanticTokens = false,
-							buildFlags = { "-tags=integration" },
+							buildFlags = { "-tags=integration,scripts" },
 						},
 					},
 				},
